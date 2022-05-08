@@ -1,0 +1,16 @@
+export enum Hospital2Patient {
+  Id = "PatientId",
+  MRN = "MRN",
+  DOB = "PatientDOB",
+  IsAlive = "IsPatientDeceased",
+  DeathDate = "DeathDate",
+  FirstName = "FirstName",
+  LastName = "LastName",
+  Gender = "Gender",
+  Sex = "Sex",
+  Address = "AddressLine",
+  City = "AddressCity",
+  State = "AddressState",
+  ZipCode = "AddressZipCode",
+  LastModifiedDate = "LastModifiedDate",
+}

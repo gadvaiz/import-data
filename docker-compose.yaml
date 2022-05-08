@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql
+    env_file: ./enviorments/.env-mysql
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=hospitals-data
+    stdin_open: true
+    ports:
+      - "3306:3306"
+  
+  import-data:
+    build: .
+    ports:
+      - 80:80
+    volumes:
+      - /app/node_modules
+      - ./src:/app/src
+    env_file:
+      - ./enviorments/.env-import-data
+    depends_on:
+      - mysql
+volumes:
+  data:
